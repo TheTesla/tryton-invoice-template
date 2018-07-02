@@ -1,0 +1,10 @@
+--- tryton/usr/lib/python3/dist-packages/trytond/modules/party/contact_mechanism.py	2017-06-14 10:33:59.000000000 +0000
++++ tryton-invoice-template/contact_mechanism.py	2018-07-02 17:20:54.017478258 +0000
+@@ -44,6 +44,7 @@
+ 
+     type = fields.Selection(_TYPES, 'Type', required=True, states=STATES,
+         sort=False, depends=DEPENDS)
++    type_string = type.translated('type')
+     value = fields.Char('Value', select=True, states=STATES, depends=DEPENDS
+         # Add all function fields to ensure to always fill them via on_change
+         + ['email', 'website', 'skype', 'sip', 'other_value', 'value_compact'])
